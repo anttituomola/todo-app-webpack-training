@@ -18,3 +18,14 @@ h1 {
 .todoElement {
   padding: 0.5em;
 }
+
+.missingInput {
+  @keyframes animaatio {
+    0%, 100% {background-color: white;}
+    50% {background-color: red;}
+  }
+}
+
+#inputEl {
+  animation: animaatio 3s 10; 
+}
