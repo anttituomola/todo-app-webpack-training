@@ -45,5 +45,9 @@
     "style-loader": "^0.17.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "uuid": "^8.3.2"
   }
 }
