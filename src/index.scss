@@ -29,7 +29,10 @@ h1 {
   font-weight: 400;
   color: $darkblue
 }
-
+.todoRow {
+  display: flex;
+  height: 100%;
+}
 .todoElement {
   padding: 0.5em;
   margin: 0.25em;
@@ -43,12 +46,19 @@ h1 {
 .todoText {
   margin-right: 2em;
   text-decoration: bold;
+
 }
 
 .todoDueDate {
   color: $lightgrey;
+
 }
 
+.trashicon {
+  margin: 0;
+  padding-top: 1em;
+  height: 100%;
+}
 
 #inputEl {
   width: 50%;
