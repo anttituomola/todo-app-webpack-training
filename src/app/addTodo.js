@@ -6,10 +6,15 @@ import { v4 as uuidv4 } from 'uuid'
 import {render} from './render'
 
 export function addTodo() {
-    let todoText = inputEl.value
-    let aTodo = new todo(todoText, false, dayjs().add(3, "day"), uuidv4());
-    todos.push(aTodo);
-    console.log(todos)
-    inputEl.value = ""
-    render()
+    if (document.getElementById("inputEl").value != "") {
+        let todoText = inputEl.value
+        let aTodo = new todo(todoText, false, dayjs().add(3, "day"), uuidv4());
+        todos.push(aTodo);
+        console.log(todos)
+        inputEl.value = ""
+        render()
+    }
+    else {
+        document.getElementById("inputEl").classList.toggle("missingInput")
+    }
 }

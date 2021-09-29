@@ -5,10 +5,9 @@ export let todos = []
 let submitButton = document.getElementById('submitButtonEl');
 
 submitButton.addEventListener("click", () => {
-    if (document.getElementById("inputEl").value != "") {
-        addTodo()
-    }
-    else {
-        document.getElementById("inputEl").classList.toggle("missingInput")
-    }
+    addTodo()
+})
+
+document.getElementById("inputEl").addEventListener("keypress", (e) => {
+    if(e.key === "Enter") {addTodo()}
 })
