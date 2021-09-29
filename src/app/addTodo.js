@@ -16,7 +16,6 @@ export function addTodo() {
     }
     else {
         document.getElementById("inputEl").classList.toggle("missingInput")
-        //setTimeout(document.getElementById("inputEl").classList.toggle("missingInput"), 1500)
         setTimeout(() => {document.getElementById("inputEl").classList.toggle("missingInput")}, 310)
     }
 }

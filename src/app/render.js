@@ -25,6 +25,7 @@ export function render() {
     icons.forEach(function(elem) {
         elem.addEventListener("click", function(e) {
             deleteHandler(e)
+            console.log(e)
         })
     })
 }

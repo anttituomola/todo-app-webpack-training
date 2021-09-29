@@ -114,9 +114,19 @@ h1 {
 
   @keyframes highlightInput {
     0%, 100% {background-color: white;}
-    50% {background-color: $customred; transform: scale(1.1);}
+    50% {background-color: $customred; transform: scale(1.09);}
   }
 
 .missingInput {
   animation: highlightInput 0.3s 1;
+}
+
+.deletedElement {
+  animation: deleteElement 0.3s 1;
+}
+
+@keyframes deleteElement {
+  0% {opacity: 1; visibility: visible;}
+  100% {opacity: 0; visibility: hidden;}
+  
 }
