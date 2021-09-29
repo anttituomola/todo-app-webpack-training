@@ -5,6 +5,7 @@ var dayjs = require('dayjs')
 export function render() {
     renderEl.innerHTML = ""
         for (let todoData of todos) {
-            renderEl.innerHTML += `<li class="todoElement">${todoData.text} ${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</li>`
+            renderEl.innerHTML += `<div class="todoElement"><span class="todoText">${todoData.text}</span> <span class="todoDueDate">${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</span></div>`
         }
+    document.getElementById("inputEl").focus()
 }
