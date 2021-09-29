@@ -9,6 +9,7 @@ export function render() {
     for (let todoData of todos) {
         renderEl.innerHTML += `
             <div class="todoRow">
+            <input type="checkbox" class="todoCheckbox" />
                 <div class="todoElement">
                     <span class="todoText">${todoData.text}</span>
                     <span class="todoDueDate">${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</span>

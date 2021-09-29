@@ -32,6 +32,7 @@ h1 {
 .todoRow {
   display: flex;
   height: 100%;
+  align-items: baseline;
 }
 .todoElement {
   padding: 0.5em;
@@ -53,6 +54,21 @@ h1 {
   color: $lightgrey;
 
 }
+
+.todoCheckbox {
+  appearance: none;
+  border: 1px solid black;
+  background-color: $lightgrey;
+  border-radius: 0.2em;
+  padding: 0.5rem;
+}
+
+.todoCheckbox:checked + div {
+  text-decoration: line-through;
+  font-style: italic;
+  color: $lightgrey;
+}
+
 
 .trashicon {
   margin: 0;
