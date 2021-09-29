@@ -4,6 +4,7 @@ $lightblue: #A8DADC;
 $darkerblue: #457B9D;
 $darkblue: #1D3557;
 $lightgrey: #F1FAEE;
+$customred: #e63946;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
@@ -80,6 +81,13 @@ h1 {
   width: 50%;
   padding: 0.5em;
   text-align: center;
+  border: 1px solid $darkblue;
+  border-radius: 0.2em;
+}
+
+#inputEl:focus {
+  outline: none;
+  background-color: $lightgrey;
 }
 
 #submitButtonEl {
@@ -104,9 +112,11 @@ h1 {
   transform: scale(0.98);
 } 
 
-.missingInput {
-  @keyframes animaatio {
+  @keyframes highlightInput {
     0%, 100% {background-color: white;}
-    50% {background-color: red;}
+    50% {background-color: $customred; transform: scale(1.1);}
   }
+
+.missingInput {
+  animation: highlightInput 0.3s 1;
 }

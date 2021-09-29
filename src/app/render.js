@@ -4,6 +4,8 @@ import {deleteHandler} from "./deleteHandler"
 let renderEl = document.getElementById('renderEl');
 var dayjs = require('dayjs')
 
+//TODO: when task is done, hide the due date
+
 export function render() {
     renderEl.innerHTML = ""
     for (let todoData of todos) {
