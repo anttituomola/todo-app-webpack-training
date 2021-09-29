@@ -1,8 +1,20 @@
 $white: #FFF;
 $success: #09c476;
+$lightblue: #A8DADC;
+$darkerblue: #457B9D;
+$darkblue: #1D3557;
+$lightgrey: #F1FAEE;
 
 body {
-  background-color: $success;
+  background-color: $lightblue;
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -19,13 +31,36 @@ h1 {
   padding: 0.5em;
 }
 
+
+#inputEl {
+  width: 50%;
+  padding: 0.5em;
+}
+
+#submitButtonEl {
+  width: 30%;
+  margin-top: 1em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 0;
+  background-color: $darkerblue;
+  color: $lightgrey;
+}
+
+#submitButtonEl:hover {
+  background-color: $darkblue;
+  cursor: pointer;
+  color: $lightgrey;
+  text-decoration: bold;
+}
+
+#submitButtonEl:active {
+  transform: scale(0.98);
+} 
+
 .missingInput {
   @keyframes animaatio {
     0%, 100% {background-color: white;}
     50% {background-color: red;}
   }
-}
-
-#inputEl {
-  animation: animaatio 3s 10; 
 }

@@ -4,7 +4,7 @@ var dayjs = require('dayjs')
 
 export function render() {
     renderEl.innerHTML = ""
-    for (let todoData of todos) {
-        renderEl.innerHTML += `<div class="todoElement">${todoData.text} ${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</div>`
-    }
+        for (let todoData of todos) {
+            renderEl.innerHTML += `<li class="todoElement">${todoData.text} ${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</li>`
+        }
 }
