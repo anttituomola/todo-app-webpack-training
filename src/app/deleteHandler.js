@@ -6,7 +6,6 @@ export function deleteHandler(e) {
    for(let i=0; i<icons.length; i++) {
        if(icons[i].id === e.target.id) {
            e.target.parentNode.classList.add("deletedElement")
-           //setTimeout(() => {todos.splice(i, 1)},200)
            todos.splice(i, 1)
            setTimeout(() => render(),300)
        }

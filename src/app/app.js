@@ -2,9 +2,8 @@ import { addTodo } from "./addTodo"
 
 export let todos = []
 
-let submitButton = document.getElementById('submitButtonEl');
-
 //Listen for button click
+let submitButton = document.getElementById('submitButtonEl');
 submitButton.addEventListener("click", () => {addTodo()})
 
 //Listen for Enter

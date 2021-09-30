@@ -4,21 +4,24 @@ var dayjs = require('dayjs')
 let inputEl = document.getElementById('inputEl');
 import { v4 as uuidv4 } from 'uuid'
 import { render } from './render'
-import {checkDuplicates} from './checkDuplicates'
+import { checkDuplicates } from './checkDuplicates'
 
 export function addTodo() {
-  //Need help with this:
-  //checkDuplicates()
-  if (inputEl.value != "") {
-    let todoText = inputEl.value
-    let aTodo = new todo(todoText, false, dayjs().add(3, "day"), uuidv4());
-    todos.push(aTodo);
-    console.log(todos)
+  if (checkDuplicates()) { 
     inputEl.value = ""
-    render()
-  } else {
-    document.getElementById("inputEl").classList.toggle("missingInput")
-    setTimeout(() => { document.getElementById("inputEl").classList.toggle("missingInput") }, 310)
+    inputEl.focus()
+   } else {
+    if (inputEl.value != "") {
+      let todoText = inputEl.value
+      let aTodo = new todo(todoText, false, dayjs().add(3, "day"), uuidv4());
+      todos.push(aTodo);
+      console.log(todos)
+      inputEl.value = ""
+      render()
+    } else {
+      document.getElementById("inputEl").classList.toggle("missingInput")
+      setTimeout(() => { document.getElementById("inputEl").classList.toggle("missingInput") }, 310)
+    }
   }
 }
 

@@ -34,13 +34,14 @@ h1 {
   display: flex;
   height: 100%;
   align-items: baseline;
+  border-bottom: 1px solid black;
+  margin-bottom: 1em;
 }
 .todoElement {
   padding: 0.5em;
   margin: 0.25em;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid black;
   width: 100%;
   justify-content: space-between;
 }
@@ -120,7 +121,7 @@ h1 {
   }
 
 .duplicateInput {
-  animation: highlightInput 1s 3;
+  animation: highlightInput 0.5s 3;
 }
 
 .missingInput {
