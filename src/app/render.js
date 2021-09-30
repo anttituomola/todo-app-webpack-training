@@ -14,14 +14,15 @@ export function render() {
             <input type="checkbox" class="todoCheckbox" />
                 <div class="todoElement">
                     <span class="todoText">${todoData.text}</span>
-                    <span class="todoDueDate">${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</span>
                 </div>
                 <i class="far calendaricon fa-calendar-alt"></i>
                 <i id="${todoData.id}" class="trashicon far fa-trash-alt" />
             </div>`
+            /* <span class="todoDueDate">${dayjs(todoData.dueDate).format("DD.MM.YYYY")}</span> */
     }
     document.getElementById("inputEl").focus()
 
+    //listen for checkboxes
     let checkboxes = document.querySelectorAll(".todoCheckbox")
     checkboxes.forEach((elem) => {
         elem.addEventListener("click", (e) => {
@@ -29,6 +30,7 @@ export function render() {
         })
     })
 
+    //listen for delete icons
     let deleteIcons = document.querySelectorAll(".trashicon")
     deleteIcons.forEach(function(elem) {
         elem.addEventListener("click", function(e) {
@@ -36,6 +38,7 @@ export function render() {
         })
     })
 
+    //listen for calendar icons
     let calendarIcons = document.querySelectorAll(".calendaricon")
     calendarIcons.forEach((elem) => {
         elem.addEventListener("click", (e) => {

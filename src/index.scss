@@ -65,7 +65,13 @@ h1 {
   padding: 0.5rem;
 }
 
-.todoCheckbox:checked + div {
+/*.todoCheckbox:checked + div {
+  text-decoration: line-through;
+  font-style: italic;
+  color: $lightgrey;
+}*/
+
+.checkedTask {
   text-decoration: line-through;
   font-style: italic;
   color: $lightgrey;
@@ -73,9 +79,6 @@ h1 {
 
 
 .trashicon:hover {
-  /* margin: 0;
-  padding-top: 1em;
-  height: 100%; */
   background-color: red;
   backface-visibility: 0.5;
 }
