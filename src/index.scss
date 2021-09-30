@@ -117,6 +117,10 @@ h1 {
     50% {background-color: $customred; transform: scale(1.09);}
   }
 
+.duplicateInput {
+  animation: highlightInput 1s 3;
+}
+
 .missingInput {
   animation: highlightInput 0.3s 1;
 }
@@ -129,4 +133,8 @@ h1 {
   0% {opacity: 1; visibility: visible;}
   100% {opacity: 0; visibility: hidden;}
   
+}
+
+.checkboxDone {
+  visibility: hidden;
 }

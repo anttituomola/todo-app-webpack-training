@@ -1,16 +1,15 @@
 import { todos } from "./app"
 import {deleteHandler} from "./deleteHandler"
+import {handleCheckbox} from "./handleCheckbox"
 
 let renderEl = document.getElementById('renderEl');
 var dayjs = require('dayjs')
-
-//TODO: when task is done, hide the due date
 
 export function render() {
     renderEl.innerHTML = ""
     for (let todoData of todos) {
         renderEl.innerHTML += `
-            <div class="todoRow">
+            <div class="todoRow" id="${todoData.id}">
             <input type="checkbox" class="todoCheckbox" />
                 <div class="todoElement">
                     <span class="todoText">${todoData.text}</span>
@@ -20,6 +19,13 @@ export function render() {
             </div>`
     }
     document.getElementById("inputEl").focus()
+
+    let checkboxes = document.querySelectorAll(".todoCheckbox")
+    checkboxes.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+            handleCheckbox(e)   
+        })
+    })
 
     let icons = document.querySelectorAll(".trashicon")
     icons.forEach(function(elem) {
