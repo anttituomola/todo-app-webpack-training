@@ -9,9 +9,11 @@ var dayjs = require('dayjs')
 export function render() {
     renderEl.innerHTML = ""
     for (let todoData of todos) {
+        const conditionalCheckedClass = todoData.done ? 'checkedTask' : '';
+
         renderEl.innerHTML += `
-            <div class="todoRow" id="${todoData.id}">
-            <input type="checkbox" class="todoCheckbox" />
+            <div class="todoRow ${conditionalCheckedClass}" id="${todoData.id}">
+                <input type="checkbox" class="todoCheckbox" />
                 <div class="todoElement">
                     <span class="todoText">${todoData.text}</span>
                 </div>
@@ -39,8 +41,9 @@ export function render() {
     })
 
     //listen for calendar icons
-    let calendarIcons = document.querySelectorAll(".calendaricon")
-    calendarIcons.forEach((elem) => {
+    document
+    .querySelectorAll(".calendaricon")
+    .forEach((elem) => {
         elem.addEventListener("click", (e) => {
             calendarHandler(e)
         })
