@@ -71,10 +71,12 @@ h1 {
 }
 
 
-.trashicon {
-  margin: 0;
+.trashicon:hover {
+  /* margin: 0;
   padding-top: 1em;
-  height: 100%;
+  height: 100%; */
+  background-color: red;
+  backface-visibility: 0.5;
 }
 
 #inputEl {
@@ -133,6 +135,12 @@ h1 {
   0% {opacity: 1; visibility: visible;}
   100% {opacity: 0; visibility: hidden;}
   
+}
+
+.far {
+  padding: 0.25em;
+  margin: 0.2em;
+  cursor: pointer;
 }
 
 .checkboxDone {
