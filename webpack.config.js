@@ -18,6 +18,10 @@ module.exports = {
         exclude: /node-modules/
       },
       {
+        test: /\.styl$/,
+        loader: "stylus-loader", // compiles Styl to CSS
+      },
+      {
         test: /\.scss$/,
         use: [
           {

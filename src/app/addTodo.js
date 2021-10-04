@@ -15,7 +15,7 @@ export function addTodo() {
      //add a todo
     if (inputEl.value != "") {
       let todoText = inputEl.value
-      let aTodo = new todo(todoText, false, dayjs().add(3, "day"), uuidv4());
+      let aTodo = new todo(todoText, false, null, uuidv4());
       todos.push(aTodo);
       console.log(todos)
       inputEl.value = ""

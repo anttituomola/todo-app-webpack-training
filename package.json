@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/jdiejim/Seed-project-webpack/issues"
   },
-  "homepage": "https://github.com/jdiejim/Seed-project-webpack#readme",
+  "homepage": "https://www.anttituomola.fi",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
@@ -43,12 +43,15 @@
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.17.0",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^6.1.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "dayjs": "^1.10.7",
-    "litepicker": "^2.0.11",
+    "flatpickr": "^4.6.9",
+    "js-datepicker": "^5.18.0",
     "uuid": "^8.3.2"
   }
 }

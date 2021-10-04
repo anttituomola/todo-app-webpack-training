@@ -1,13 +1,20 @@
 import { todos } from "./app"
 var dayjs = require('dayjs')
-import Litepicker from 'litepicker';
+import datepicker from 'js-datepicker'
+import {render} from "./render"
+
 
 export function calendarHandler(e) {
-    for (let i = 0; i < todos.length; i++) {
-        if (e.target.parentNode.id === todos[i].id) {
-            let newDuedate = new Litepicker({
-                element: document.getElementsByClassName("calendaricon")
-            })
+    let calendar = datepicker(".calendaricon", {
+        onSelect: (instanse, date) => {
+            console.log(dayjs(date).format("DD.MM.YYYY"))
+            for(let todo of todos) {
+                if(todo.id === e.target.parentElement.id) {
+                    todo.dueDate = date
+                }
+            }
+            render()
         }
-    }
+    })
 }
+
