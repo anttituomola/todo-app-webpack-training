@@ -7,10 +7,15 @@ let renderEl = document.getElementById('renderEl');
 var dayjs = require('dayjs')
 
 export function render() {
+    //Sort rendered todos by due date
+    todos.sort(function (a, b) {
+        return dayjs(a.dueDate) - dayjs(b.dueDate);
+    });
     renderEl.innerHTML = ""
     for (let todoData of todos) {
         const conditionalCheckedClass = todoData.done ? 'checkedTask' : ''
         const dueDateExists = todoData.dueDate ? dayjs(todoData.dueDate).format("DD.MM.YYYY") : ""
+
         renderEl.innerHTML += `
             <div class="todoRow ${conditionalCheckedClass}" id="${todoData.id}">
                 <input type="checkbox" class="todoCheckbox" />
@@ -45,7 +50,11 @@ export function render() {
     .querySelectorAll(".calendaricon")
     .forEach((elem) => {
         elem.addEventListener("click", (e) => {
-            calendarHandler(e)
+            const picker = datepicker(e.target, {
+                onSelect: (instance, date) => {
+                    calendarHandler(e, date)
+                }
+            })
         })
     })
 }
