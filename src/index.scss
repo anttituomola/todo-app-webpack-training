@@ -112,6 +112,17 @@ h1 {
   transform: scale(0.98);
 } 
 
+#dueDateSort {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 0;
+  background-color: $lightgrey;
+  color: $darkerblue;
+}
+
   @keyframes highlightInput {
     0%, 100% {background-color: white;}
     50% {background-color: $customred; transform: scale(1.09);}

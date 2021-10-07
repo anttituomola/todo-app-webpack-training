@@ -1,15 +1,11 @@
 import { todos } from "./app"
 import { listeners } from "./listeners"
+import { controls } from "./controls"
 
 let renderEl = document.getElementById('renderEl');
 var dayjs = require('dayjs')
 
 export function render() {
-    //Sort rendered todos by due date
-    todos.sort(function (a, b) {
-        return a.dueDate - b.dueDate
-    })
-    
     renderEl.innerHTML = ""
     for (let todoData of todos) {
         const conditionalCheckedClass = todoData.done ? 'checkedTask' : ''
@@ -27,5 +23,6 @@ export function render() {
             </div>`
     }
     listeners()
+    controls()
     document.getElementById("inputEl").focus()
 }
