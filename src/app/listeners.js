@@ -1,6 +1,6 @@
 import {deleteHandler} from "./deleteHandler"
 import {handleCheckbox} from "./handleCheckbox"
-import {calendarHandler} from "./calendarHandler"
+import { CalendarHandler } from "./CalendarHandler"
 
 export function listeners() {
     //listen for checkboxes
@@ -26,7 +26,8 @@ export function listeners() {
             elem.addEventListener("click", (e) => {
                 const picker = datepicker(e.target, {
                     onSelect: (instance, date) => {
-                        calendarHandler(e, date)
+                        const calendarHandler = new CalendarHandler()
+                        calendarHandler.handle(e, date)
                     }
                 })
             })

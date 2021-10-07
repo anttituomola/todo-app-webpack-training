@@ -1,9 +1,10 @@
 import { todos } from "./app"
 import { listeners } from "./listeners"
-import { controls } from "./controls"
+import { controls } from "./Controls"
 
 let renderEl = document.getElementById('renderEl');
 var dayjs = require('dayjs')
+import {Controls} from "./Controls"
 
 export function render() {
     renderEl.innerHTML = ""
@@ -23,6 +24,8 @@ export function render() {
             </div>`
     }
     listeners()
-    controls()
+    //controls()
+    const controls = new Controls()
+    controls.renderAllControls()
     document.getElementById("inputEl").focus()
 }
