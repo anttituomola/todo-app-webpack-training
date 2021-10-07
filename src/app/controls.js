@@ -18,6 +18,7 @@ export function controls() {
                 return a.dueDate - b.dueDate
             })
             render()
+            console.log("This is new branch")
         })
     }
 }
