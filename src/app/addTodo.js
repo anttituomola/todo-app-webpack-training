@@ -24,6 +24,7 @@ export function addTodo() {
       //highlight empty input field
       document.getElementById("inputEl").classList.toggle("missingInput")
       setTimeout(() => { document.getElementById("inputEl").classList.toggle("missingInput") }, 310)
+      inputEl.focus()
     }
   }
 }
