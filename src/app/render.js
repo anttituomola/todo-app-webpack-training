@@ -22,13 +22,16 @@ export function render() {
                 <i id="${todoData.id}" class="trashicon far fa-trash-alt"></i>
             </div>`
     }
-    //listeners()
+    //Listen for everyting
     const listeners = new Listeners()
     listeners.checkboxesListener()
     listeners.deleteIconsListener()
     listeners.calendarIconListener()
-    //controls()
+
+    //Add controls when todos exist
     const controls = new Controls()
     controls.renderAllControls()
+
+    //Focus to input field
     document.getElementById("inputEl").focus()
 }
