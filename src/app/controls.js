@@ -3,7 +3,8 @@ import { render } from "./render"
 
 export class Controls {
     constructor() {
-        this.controlsEl = document.getElementById("controls")
+        this.sortButtonDiv = document.getElementById("sortButtonDiv")
+        this.filterButtonDiv = document.getElementById("filterButtonDiv")
     }
 
     atLeastOneDueDataExists() {
@@ -12,10 +13,7 @@ export class Controls {
 
     renderDueDateControl() {
         if (this.atLeastOneDueDataExists()) {
-            this.controlsEl.innerHTML = `
-                <button id="dueDateSort" class="button">Sort by due date</button>
-            `
-    
+            this.sortButtonDiv.innerHTML = `<button id="dueDateSort" class="button">Sort by due date</button>`
             let dueDateSortButton = document.getElementById("dueDateSort")
             dueDateSortButton.addEventListener("click", () => {
                 //Sort rendered todos by due date
@@ -23,7 +21,6 @@ export class Controls {
                     return a.dueDate - b.dueDate
                 })
                 render()
-                console.log("This is new branch")
             })
         }
     }
@@ -34,6 +31,15 @@ export class Controls {
     }
 
     renderFilterControls() {
-        // todo implement
+        if(todos.some((currentTodo) => currentTodo.done === true)) {
+            this.filterButtonDiv.innerHTML = `<button id="filterButtonEl" class="button">Hide done tasks</button>`
+            let filerButton = document.getElementById("filterButtonEl")
+            filerButton.addEventListener("click", () => {
+                //hide done task
+                let doneTasks = document.querySelectorAll(".checkedTask")
+                doneTasks.forEach((elem) => {elem.classList.add("deletedElement")})
+                }
+            )
+        }
     }
 }
