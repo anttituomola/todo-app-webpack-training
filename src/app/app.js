@@ -1,15 +1,10 @@
-import { addTodo } from "./addTodo"
+import { Listeners } from "./Listeners"
 
 export let todos = []
 
-//Listen for button click
-let submitButton = document.getElementById('submitButtonEl');
-submitButton.addEventListener("click", () => {addTodo()})
-
-//Listen for Enter
-document.getElementById("inputEl").addEventListener("keypress", (e) => {
-    if(e.key === "Enter") {addTodo()}
-})
+let listeners = new Listeners()
+listeners.submitButtonListener()
+listeners.enterListener()
 
 //Initial focus on input
 document.getElementById("inputEl").focus()

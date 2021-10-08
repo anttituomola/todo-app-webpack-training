@@ -1,10 +1,9 @@
 import { todos } from "./app"
-import { listeners } from "./listeners"
-import { controls } from "./Controls"
+import { Listeners } from "./Listeners"
+import {Controls} from "./Controls"
 
 let renderEl = document.getElementById('renderEl');
 var dayjs = require('dayjs')
-import {Controls} from "./Controls"
 
 export function render() {
     renderEl.innerHTML = ""
@@ -23,7 +22,11 @@ export function render() {
                 <i id="${todoData.id}" class="trashicon far fa-trash-alt"></i>
             </div>`
     }
-    listeners()
+    //listeners()
+    const listeners = new Listeners()
+    listeners.checkboxesListener()
+    listeners.deleteIconsListener()
+    listeners.calendarIconListener()
     //controls()
     const controls = new Controls()
     controls.renderAllControls()
