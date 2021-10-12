@@ -25,21 +25,15 @@ export class Controls {
         }
     }
 
+
+    renderFilterControls() {
+        if(todos.some((currentTodo) => {currentTodo.done === true})) {
+            console.log("This is still undone")
+        } else { console.log("Nothing is selected!")}
+    }
+
     renderAllControls() {
         this.renderDueDateControl()
         this.renderFilterControls();
-    }
-
-    renderFilterControls() {
-        if(todos.some((currentTodo) => currentTodo.done === true)) {
-            this.filterButtonDiv.innerHTML = `<button id="filterButtonEl" class="button">Hide done tasks</button>`
-            let filerButton = document.getElementById("filterButtonEl")
-            filerButton.addEventListener("click", () => {
-                //hide done task
-                let doneTasks = document.querySelectorAll(".checkedTask")
-                doneTasks.forEach((elem) => {elem.classList.add("deletedElement")})
-                }
-            )
-        }
     }
 }
