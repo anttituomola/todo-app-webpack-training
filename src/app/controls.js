@@ -1,5 +1,5 @@
 import { todos } from "./app"
-import { render } from "./render"
+import { Render } from "./Render"
 
 export class Controls {
     constructor() {
@@ -20,7 +20,8 @@ export class Controls {
                 todos.sort(function (a, b) {
                     return a.dueDate - b.dueDate
                 })
-                render()
+                const renderClass = new Render()
+                renderClass.render()
             })
         }
     }

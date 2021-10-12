@@ -1,6 +1,7 @@
-import { addTodo } from "./addTodo"
+import { AddTodo } from "./AddTodo"
 import { Handlers } from "./Handlers"
 let handlers = new Handlers()
+let addTodo = new AddTodo()
 
 
 export class Listeners {
@@ -15,13 +16,13 @@ export class Listeners {
 
     //Listen for button click
     submitButtonListener() {
-        this.submitButton.addEventListener("click", () => {addTodo()})
+        this.submitButton.addEventListener("click", () => {addTodo.addTodo()})
     }
 
     //Listen for Enter
     enterListener() {
         this.inputEl.addEventListener("keypress", (e) => {
-            if(e.key === "Enter") {addTodo()}
+            if(e.key === "Enter") {addTodo.addTodo()}
         })
     }
 
