@@ -28,7 +28,10 @@ export class Controls {
 
 
     renderFilterControls() {
-        if(todos.some((currentTodo) => {currentTodo.done === true})) {
+        const atLeastOneTodoIsDone = todos.some((todo) => todo.done === true);
+
+        //why we're never getting into the first if statement?
+        if(atLeastOneTodoIsDone) {
             console.log("This is still undone")
         } else { console.log("Nothing is selected!")}
     }

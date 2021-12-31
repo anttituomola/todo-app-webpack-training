@@ -26,9 +26,7 @@ export class Render {
         }
         //Listen for everyting
         const listeners = new Listeners()
-        listeners.checkboxesListener()
-        listeners.deleteIconsListener()
-        listeners.calendarIconListener()
+        listeners.listenForAll()
     
         //Add controls when todos exist
         const controls = new Controls()
